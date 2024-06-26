@@ -13,6 +13,10 @@ contract BlackNight is ERC20, Ownable {
         _mint(owner(), 1000 * (10 ** decimals()));
     }
 
+    function decimals() public virtual override view returns(uint8){
+        return 0;
+    }
+
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
